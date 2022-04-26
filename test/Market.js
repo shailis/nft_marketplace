@@ -20,7 +20,7 @@ contract('Market', (accounts) => {
             await token.mint({ from: minter });
         });
 
-        it('should prevent listing - contract not approved to transfer token', () => {
+        it('should prevent listing if contract not approved to transfer token', () => {
             return expectRevert(
                 market.listToken(
                     token.address,
